@@ -1,0 +1,9 @@
+@IncidentPolisherApi_HostAddress = http://localhost:5080
+
+POST {{IncidentPolisherApi_HostAddress}}/api/incidents/polish
+Content-Type: application/json
+
+{
+  "incidentNote": "Temporary degradation observed in payment service. Mitigation applied; monitoring now. Exact customer impact is unknown. Root cause has not been provided.",
+  "audience": "Leadership"
+}

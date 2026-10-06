@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Incident Polisher</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><p class="eyebrow">INCIDENT COMMUNICATION</p><h1>Incident Polisher</h1><p>Turn rough incident notes into a clear update for your audience.</p></header>
+    <div class="layout">
+      <section class="card" aria-labelledby="input-title">
+        <h2 id="input-title">Your incident</h2>
+        <form id="polish-form">
+          <label for="incident">Incident note</label>
+          <textarea id="incident" name="incident" rows="9" required placeholder="Describe what happened, the impact, and any actions taken…"></textarea>
+          <label for="audience">Audience</label>
+          <select id="audience" name="audience"><option>Engineering</option><option>Leadership</option><option>Customer</option></select>
+          <div class="actions"><button type="submit" id="submit">Polish incident</button><button type="button" id="sample" class="secondary">Load example</button></div>
+          <p class="hint">The API defaults to fake mode. Demo responses use fixed sample data. Switch AI:Provider to Ollama and restart the API when ready.</p>
+        </form>
+      </section>
+      <section class="card" aria-labelledby="output-title" aria-busy="false" id="output">
+        <h2 id="output-title">Polished update</h2>
+        <p id="message" role="status" aria-live="polite">Submit an incident to see the result here.</p>
+        <div id="result" hidden>
+          <h3>Summary</h3><p id="summary"></p>
+          <h3>Status</h3><p id="status" class="badge"></p>
+          <h3>Update</h3><p id="update"></p>
+          <h3>Missing information</h3><ul id="missing"></ul><p id="no-missing" hidden>No missing information identified.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
